@@ -1,0 +1,213 @@
+2025-01-29 17:29:23.264 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-29 17:29:23.498 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-29 17:29:23.505 [main] INFO  org.example.dao.TaskDAO - UUID extension created
+2025-01-29 17:29:23.513 [main] INFO  org.example.dao.TaskDAO - Tasks table created or already exists
+2025-01-29 17:45:02.079 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-29 17:45:02.316 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-29 17:45:02.323 [main] INFO  org.example.dao.TaskDAO - UUID extension created
+2025-01-29 17:45:02.332 [main] INFO  org.example.dao.TaskDAO - Tasks table created or already exists
+2025-01-29 17:45:30.532 [main] INFO  org.example.dao.TaskDAO - Task name updated for ID: eb0e331b-d5f9-4283-a40e-2df3c89ae266
+2025-01-29 17:45:30.532 [main] INFO  org.example.service.TaskService - Task name updated to новейшая задача for ID: eb0e331b-d5f9-4283-a40e-2df3c89ae266
+2025-01-29 17:45:30.532 [main] INFO  org.example.controller.TaskController - Task name updated for ID: eb0e331b-d5f9-4283-a40e-2df3c89ae266
+2025-01-29 18:12:10.866 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-29 18:12:11.098 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-29 18:12:11.105 [main] INFO  org.example.dao.TaskDAO - UUID extension created
+2025-01-29 18:12:11.110 [main] INFO  org.example.dao.TaskDAO - Tasks table created or already exists
+2025-01-29 18:12:31.211 [main] INFO  org.example.dao.TaskDAO - Task deleted for ID: eb0e331b-d5f9-4283-a40e-2df3c89ae266
+2025-01-29 18:12:53.932 [main] WARN  org.example.controller.TaskController - Invalid UUID format: sdfsdf
+2025-01-29 18:32:51.765 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-29 18:32:52.121 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-29 18:32:52.128 [main] INFO  org.example.dao.TaskDAO - UUID extension created
+2025-01-29 18:32:52.136 [main] INFO  org.example.dao.TaskDAO - Tasks table created or already exists
+2025-01-29 18:33:05.082 [main] INFO  org.example.dao.TaskDAO - Task added with ID: e31d56c1-a795-4118-b583-be4e1ff32c9d
+2025-01-29 18:33:35.342 [main] INFO  org.example.dao.TaskDAO - Task name updated for ID: e31d56c1-a795-4118-b583-be4e1ff32c9d
+2025-01-29 18:33:35.342 [main] INFO  org.example.service.TaskService - Task name updated to Проверка всего функцианал for ID: e31d56c1-a795-4118-b583-be4e1ff32c9d
+2025-01-29 18:33:35.342 [main] INFO  org.example.controller.TaskController - Task name updated for ID: e31d56c1-a795-4118-b583-be4e1ff32c9d
+2025-01-29 18:33:53.197 [main] INFO  org.example.dao.TaskDAO - Task deleted for ID: 8224a03f-9a51-40cf-9fd3-d5638672f441
+2025-01-29 18:34:15.906 [main] INFO  org.example.dao.TaskDAO - Task stopped with ID: 9efae751-3af1-4b1c-92ec-32262c956a8f
+2025-01-29 18:34:15.906 [main] INFO  org.example.service.TaskService - Task stopped with ID: 9efae751-3af1-4b1c-92ec-32262c956a8f
+2025-01-29 18:34:15.906 [main] INFO  org.example.controller.TaskController - Task stopped with ID: 9efae751-3af1-4b1c-92ec-32262c956a8f
+2025-01-29 18:34:43.215 [main] INFO  org.example.dao.TaskDAO - Task finished with ID: e31d56c1-a795-4118-b583-be4e1ff32c9d
+2025-01-29 18:34:43.215 [main] INFO  org.example.service.TaskService - Task finished with ID: e31d56c1-a795-4118-b583-be4e1ff32c9d
+2025-01-29 18:34:43.215 [main] INFO  org.example.controller.TaskController - Task finished with ID: e31d56c1-a795-4118-b583-be4e1ff32c9d
+2025-01-29 19:25:38.112 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-29 19:25:38.340 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-29 19:25:38.346 [main] INFO  org.example.dao.TaskDAO - UUID extension created
+2025-01-29 19:25:38.352 [main] INFO  org.example.dao.TaskDAO - Tasks table created or already exists
+2025-01-29 19:25:38.353 [main] INFO  org.example.service.TaskService - TaskService initialized
+2025-01-29 19:25:38.355 [main] INFO  org.example.controller.TaskController - TaskController initialized
+2025-01-29 19:25:38.355 [main] INFO  org.example.controller.TaskController - Starting application...
+2025-01-29 19:25:51.564 [main] INFO  org.example.dao.TaskDAO - Task added with ID: 10faad5e-8606-4214-b736-e519b0bdec80
+2025-01-29 19:25:51.564 [main] INFO  org.example.controller.TaskController - Task added with ID: 10faad5e-8606-4214-b736-e519b0bdec80
+2025-01-29 19:25:53.146 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 19:27:33.476 [main] INFO  org.example.dao.TaskDAO - Task stopped with ID: 10faad5e-8606-4214-b736-e519b0bdec80
+2025-01-29 19:27:33.476 [main] INFO  org.example.service.TaskService - Task stopped with ID: 10faad5e-8606-4214-b736-e519b0bdec80
+2025-01-29 19:27:33.476 [main] INFO  org.example.controller.TaskController - Task stopped with ID: 10faad5e-8606-4214-b736-e519b0bdec80
+2025-01-29 19:28:21.761 [main] WARN  org.example.service.TaskService - Failed to finish task with ID: 10faad5e-8606-4214-b736-e519b0bdec80
+2025-01-29 19:28:21.762 [main] WARN  org.example.controller.TaskController - Failed to finish task with ID: 10faad5e-8606-4214-b736-e519b0bdec80
+2025-01-29 19:28:30.179 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 19:28:40.571 [main] WARN  org.example.service.TaskService - Failed to finish task with ID: 10faad5e-8606-4214-b736-e519b0bdec80
+2025-01-29 19:28:40.571 [main] WARN  org.example.controller.TaskController - Failed to finish task with ID: 10faad5e-8606-4214-b736-e519b0bdec80
+2025-01-29 19:28:48.405 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 19:29:11.868 [main] INFO  org.example.dao.TaskDAO - Task added with ID: db957f8f-fd66-4b23-bbed-2be0ca464c0d
+2025-01-29 19:29:11.869 [main] INFO  org.example.controller.TaskController - Task added with ID: db957f8f-fd66-4b23-bbed-2be0ca464c0d
+2025-01-29 19:29:14.923 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 19:30:14.028 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 19:30:29.077 [main] INFO  org.example.dao.TaskDAO - Task stopped with ID: db957f8f-fd66-4b23-bbed-2be0ca464c0d
+2025-01-29 19:30:29.077 [main] INFO  org.example.service.TaskService - Task stopped with ID: db957f8f-fd66-4b23-bbed-2be0ca464c0d
+2025-01-29 19:30:29.077 [main] INFO  org.example.controller.TaskController - Task stopped with ID: db957f8f-fd66-4b23-bbed-2be0ca464c0d
+2025-01-29 19:30:31.824 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 19:30:50.709 [main] INFO  org.example.controller.TaskController - Exiting application...
+2025-01-29 19:46:05.715 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-29 19:46:05.944 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-29 19:46:05.950 [main] INFO  org.example.dao.TaskDAO - UUID extension created
+2025-01-29 19:46:05.965 [main] INFO  org.example.dao.TaskDAO - Tasks table created or already exists
+2025-01-29 19:46:05.966 [main] INFO  org.example.service.TaskService - TaskService initialized
+2025-01-29 19:46:05.969 [main] INFO  org.example.controller.TaskController - TaskController initialized
+2025-01-29 19:46:05.969 [main] INFO  org.example.controller.TaskController - Starting application...
+2025-01-29 19:46:21.118 [main] INFO  org.example.dao.TaskDAO - Task added with ID: edc5f6bd-ca13-4778-8464-63f135fdb04a
+2025-01-29 19:46:21.118 [main] INFO  org.example.controller.TaskController - Task added with ID: edc5f6bd-ca13-4778-8464-63f135fdb04a
+2025-01-29 19:46:23.401 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 19:48:12.668 [main] INFO  org.example.dao.TaskDAO - Task stopped with ID: edc5f6bd-ca13-4778-8464-63f135fdb04a
+2025-01-29 19:48:12.668 [main] INFO  org.example.service.TaskService - Task stopped with ID: edc5f6bd-ca13-4778-8464-63f135fdb04a
+2025-01-29 19:48:12.669 [main] INFO  org.example.controller.TaskController - Task stopped with ID: edc5f6bd-ca13-4778-8464-63f135fdb04a
+2025-01-29 19:48:20.564 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 19:50:09.499 [main] WARN  org.example.service.TaskService - Failed to finish task with ID: edc5f6bd-ca13-4778-8464-63f135fdb04a
+2025-01-29 19:50:09.499 [main] WARN  org.example.controller.TaskController - Failed to finish task with ID: edc5f6bd-ca13-4778-8464-63f135fdb04a
+2025-01-29 19:50:21.810 [main] WARN  org.example.service.TaskService - Failed to finish task with ID: edc5f6bd-ca13-4778-8464-63f135fdb04a
+2025-01-29 19:50:21.810 [main] WARN  org.example.controller.TaskController - Failed to finish task with ID: edc5f6bd-ca13-4778-8464-63f135fdb04a
+2025-01-29 19:50:24.295 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 19:50:37.434 [main] INFO  org.example.controller.TaskController - Exiting application...
+2025-01-29 20:25:44.709 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-29 20:25:44.935 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-29 20:25:44.942 [main] INFO  org.example.dao.TaskDAO - UUID extension created
+2025-01-29 20:25:44.955 [main] INFO  org.example.dao.TaskDAO - Tasks table created or already exists
+2025-01-29 20:25:44.956 [main] INFO  org.example.service.TaskService - TaskService initialized
+2025-01-29 20:25:44.959 [main] INFO  org.example.controller.TaskController - TaskController initialized
+2025-01-29 20:25:44.959 [main] INFO  org.example.controller.TaskController - Starting application...
+2025-01-29 20:25:49.006 [main] INFO  org.example.controller.TaskController - No active tasks found
+2025-01-29 20:26:05.589 [main] INFO  org.example.dao.TaskDAO - Task added with ID: c30c98c2-2c90-4e27-a780-bbea7112da62
+2025-01-29 20:26:05.590 [main] INFO  org.example.controller.TaskController - Task added with ID: c30c98c2-2c90-4e27-a780-bbea7112da62
+2025-01-29 20:26:09.075 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 20:27:41.877 [main] INFO  org.example.dao.TaskDAO - Task stopped with ID: c30c98c2-2c90-4e27-a780-bbea7112da62
+2025-01-29 20:27:41.877 [main] INFO  org.example.service.TaskService - Task stopped with ID: c30c98c2-2c90-4e27-a780-bbea7112da62
+2025-01-29 20:27:41.877 [main] INFO  org.example.controller.TaskController - Task stopped with ID: c30c98c2-2c90-4e27-a780-bbea7112da62
+2025-01-29 20:27:47.676 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 20:29:12.496 [main] INFO  org.example.dao.TaskDAO - Task finished with ID: c30c98c2-2c90-4e27-a780-bbea7112da62
+2025-01-29 20:29:12.497 [main] INFO  org.example.service.TaskService - Task finished with ID: c30c98c2-2c90-4e27-a780-bbea7112da62
+2025-01-29 20:29:12.497 [main] INFO  org.example.controller.TaskController - Task finished with ID: c30c98c2-2c90-4e27-a780-bbea7112da62
+2025-01-29 20:29:16.678 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 20:31:18.587 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-29 20:31:18.811 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-29 20:31:18.817 [main] INFO  org.example.dao.TaskDAO - UUID extension created
+2025-01-29 20:31:18.823 [main] INFO  org.example.dao.TaskDAO - Tasks table created or already exists
+2025-01-29 20:31:18.824 [main] INFO  org.example.service.TaskService - TaskService initialized
+2025-01-29 20:31:18.826 [main] INFO  org.example.controller.TaskController - TaskController initialized
+2025-01-29 20:31:18.827 [main] INFO  org.example.controller.TaskController - Starting application...
+2025-01-29 20:31:34.248 [main] INFO  org.example.dao.TaskDAO - Task added with ID: 1b87859a-09a0-41ea-9c3b-13ab17027a35
+2025-01-29 20:31:34.248 [main] INFO  org.example.controller.TaskController - Task added with ID: 1b87859a-09a0-41ea-9c3b-13ab17027a35
+2025-01-29 20:31:37.184 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 20:33:26.747 [main] WARN  org.example.service.TaskService - Failed to stop task with ID: c30c98c2-2c90-4e27-a780-bbea7112da62
+2025-01-29 20:33:26.747 [main] WARN  org.example.controller.TaskController - Failed to stop task with ID: c30c98c2-2c90-4e27-a780-bbea7112da62
+2025-01-29 20:33:31.228 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 20:33:45.272 [main] INFO  org.example.dao.TaskDAO - Task stopped with ID: 1b87859a-09a0-41ea-9c3b-13ab17027a35
+2025-01-29 20:33:45.272 [main] INFO  org.example.service.TaskService - Task stopped with ID: 1b87859a-09a0-41ea-9c3b-13ab17027a35
+2025-01-29 20:33:45.272 [main] INFO  org.example.controller.TaskController - Task stopped with ID: 1b87859a-09a0-41ea-9c3b-13ab17027a35
+2025-01-29 20:33:48.415 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 20:35:32.060 [main] INFO  org.example.dao.TaskDAO - Task finished with ID: 1b87859a-09a0-41ea-9c3b-13ab17027a35
+2025-01-29 20:35:32.060 [main] INFO  org.example.service.TaskService - Task finished with ID: 1b87859a-09a0-41ea-9c3b-13ab17027a35
+2025-01-29 20:35:32.060 [main] INFO  org.example.controller.TaskController - Task finished with ID: 1b87859a-09a0-41ea-9c3b-13ab17027a35
+2025-01-29 20:35:35.779 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 20:55:03.444 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-29 20:55:03.676 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-29 20:55:03.684 [main] INFO  org.example.dao.TaskDAO - UUID extension created
+2025-01-29 20:55:03.691 [main] INFO  org.example.dao.TaskDAO - Tasks table created or already exists
+2025-01-29 20:55:03.692 [main] INFO  org.example.service.TaskService - TaskService initialized
+2025-01-29 20:55:03.694 [main] INFO  org.example.controller.TaskController - TaskController initialized
+2025-01-29 20:55:03.694 [main] INFO  org.example.controller.TaskController - Starting application...
+2025-01-29 20:55:12.910 [main] INFO  org.example.dao.TaskDAO - Task added with ID: 80bf3560-e001-4061-ae96-71b305f41408
+2025-01-29 20:55:12.910 [main] INFO  org.example.controller.TaskController - Task added with ID: 80bf3560-e001-4061-ae96-71b305f41408
+2025-01-29 20:55:14.915 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 20:56:58.715 [main] INFO  org.example.dao.TaskDAO - Task stopped with ID: 80bf3560-e001-4061-ae96-71b305f41408
+2025-01-29 20:56:58.715 [main] INFO  org.example.service.TaskService - Task stopped with ID: 80bf3560-e001-4061-ae96-71b305f41408
+2025-01-29 20:56:58.715 [main] INFO  org.example.controller.TaskController - Task stopped with ID: 80bf3560-e001-4061-ae96-71b305f41408
+2025-01-29 20:57:01.372 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 20:58:32.504 [main] INFO  org.example.dao.TaskDAO - Task finished with ID: 80bf3560-e001-4061-ae96-71b305f41408
+2025-01-29 20:58:32.504 [main] INFO  org.example.service.TaskService - Task finished with ID: 80bf3560-e001-4061-ae96-71b305f41408
+2025-01-29 20:58:32.505 [main] INFO  org.example.controller.TaskController - Task finished with ID: 80bf3560-e001-4061-ae96-71b305f41408
+2025-01-29 20:58:35.299 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 20:58:52.946 [main] INFO  org.example.controller.TaskController - Exiting application...
+2025-01-29 21:03:03.330 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-29 21:03:03.656 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-29 21:03:03.662 [main] INFO  org.example.dao.TaskDAO - UUID extension created
+2025-01-29 21:03:03.670 [main] INFO  org.example.dao.TaskDAO - Tasks table created or already exists
+2025-01-29 21:03:03.671 [main] INFO  org.example.service.TaskService - TaskService initialized
+2025-01-29 21:03:03.674 [main] INFO  org.example.controller.TaskController - TaskController initialized
+2025-01-29 21:03:03.674 [main] INFO  org.example.controller.TaskController - Starting application...
+2025-01-29 21:03:11.527 [main] INFO  org.example.dao.TaskDAO - Task added with ID: 87aeebdb-ad17-4d88-88dc-997f2fa8eaf1
+2025-01-29 21:03:11.527 [main] INFO  org.example.controller.TaskController - Task added with ID: 87aeebdb-ad17-4d88-88dc-997f2fa8eaf1
+2025-01-29 21:03:12.714 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 21:05:36.432 [main] INFO  org.example.dao.TaskDAO - Task stopped with ID: 87aeebdb-ad17-4d88-88dc-997f2fa8eaf1
+2025-01-29 21:05:36.432 [main] INFO  org.example.service.TaskService - Task stopped with ID: 87aeebdb-ad17-4d88-88dc-997f2fa8eaf1
+2025-01-29 21:05:36.432 [main] INFO  org.example.controller.TaskController - Task stopped with ID: 87aeebdb-ad17-4d88-88dc-997f2fa8eaf1
+2025-01-29 21:05:52.585 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 21:07:09.857 [main] ERROR org.example.dao.TaskDAO - Error finishing task with ID: 87aeebdb-ad17-4d88-88dc-997f2fa8eaf1
+org.postgresql.util.PSQLException: Не указано значение для параметра 1.
+	at org.postgresql.core.v3.SimpleParameterList.checkAllParametersSet(SimpleParameterList.java:275) ~[postgresql-42.2.20.jar:42.2.20]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:307) ~[postgresql-42.2.20.jar:42.2.20]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481) ~[postgresql-42.2.20.jar:42.2.20]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401) ~[postgresql-42.2.20.jar:42.2.20]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164) ~[postgresql-42.2.20.jar:42.2.20]
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:130) ~[postgresql-42.2.20.jar:42.2.20]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at org.example.dao.TaskDAO.finishTask(TaskDAO.java:205) [classes/:?]
+	at org.example.service.TaskService.finishTask(TaskService.java:86) [classes/:?]
+	at org.example.controller.TaskController.finishTask(TaskController.java:178) [classes/:?]
+	at org.example.controller.TaskController.run(TaskController.java:58) [classes/:?]
+	at org.example.TimeTrackerApp.main(TimeTrackerApp.java:16) [classes/:?]
+2025-01-29 21:07:09.864 [main] WARN  org.example.service.TaskService - Failed to finish task with ID: 87aeebdb-ad17-4d88-88dc-997f2fa8eaf1
+2025-01-29 21:07:09.864 [main] WARN  org.example.controller.TaskController - Failed to finish task with ID: 87aeebdb-ad17-4d88-88dc-997f2fa8eaf1
+2025-01-29 21:09:33.355 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-29 21:09:33.591 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-29 21:09:33.598 [main] INFO  org.example.dao.TaskDAO - UUID extension created
+2025-01-29 21:09:33.607 [main] INFO  org.example.dao.TaskDAO - Tasks table created or already exists
+2025-01-29 21:09:33.608 [main] INFO  org.example.service.TaskService - TaskService initialized
+2025-01-29 21:09:33.610 [main] INFO  org.example.controller.TaskController - TaskController initialized
+2025-01-29 21:09:33.611 [main] INFO  org.example.controller.TaskController - Starting application...
+2025-01-29 21:09:47.713 [main] INFO  org.example.dao.TaskDAO - Task added with ID: 36e0e362-ddf7-4cd1-b619-d05d8832c458
+2025-01-29 21:09:47.714 [main] INFO  org.example.controller.TaskController - Task added with ID: 36e0e362-ddf7-4cd1-b619-d05d8832c458
+2025-01-29 21:09:49.616 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 21:10:07.620 [main] ERROR org.example.dao.TaskDAO - Error finishing task with ID: 87aeebdb-ad17-4d88-88dc-997f2fa8eaf1
+org.postgresql.util.PSQLException: Индекс колонки вне диапазона: 2. Допустимые значения: 1..1
+	at org.postgresql.core.v3.SimpleParameterList.bind(SimpleParameterList.java:69) ~[postgresql-42.2.20.jar:42.2.20]
+	at org.postgresql.core.v3.SimpleParameterList.setBinaryParameter(SimpleParameterList.java:136) ~[postgresql-42.2.20.jar:42.2.20]
+	at org.postgresql.jdbc.PgPreparedStatement.bindBytes(PgPreparedStatement.java:1047) ~[postgresql-42.2.20.jar:42.2.20]
+	at org.postgresql.jdbc.PgPreparedStatement.setUuid(PgPreparedStatement.java:1621) ~[postgresql-42.2.20.jar:42.2.20]
+	at org.postgresql.jdbc.PgPreparedStatement.setObject(PgPreparedStatement.java:946) ~[postgresql-42.2.20.jar:42.2.20]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.setObject(HikariProxyPreparedStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at org.example.dao.TaskDAO.finishTask(TaskDAO.java:204) [classes/:?]
+	at org.example.service.TaskService.finishTask(TaskService.java:86) [classes/:?]
+	at org.example.controller.TaskController.finishTask(TaskController.java:178) [classes/:?]
+	at org.example.controller.TaskController.run(TaskController.java:58) [classes/:?]
+	at org.example.TimeTrackerApp.main(TimeTrackerApp.java:16) [classes/:?]
+2025-01-29 21:10:07.627 [main] WARN  org.example.service.TaskService - Failed to finish task with ID: 87aeebdb-ad17-4d88-88dc-997f2fa8eaf1
+2025-01-29 21:10:07.627 [main] WARN  org.example.controller.TaskController - Failed to finish task with ID: 87aeebdb-ad17-4d88-88dc-997f2fa8eaf1
+2025-01-29 21:10:45.527 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-29 21:10:45.766 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-29 21:10:45.775 [main] INFO  org.example.dao.TaskDAO - UUID extension created
+2025-01-29 21:10:45.784 [main] INFO  org.example.dao.TaskDAO - Tasks table created or already exists
+2025-01-29 21:10:45.785 [main] INFO  org.example.service.TaskService - TaskService initialized
+2025-01-29 21:10:45.788 [main] INFO  org.example.controller.TaskController - TaskController initialized
+2025-01-29 21:10:45.788 [main] INFO  org.example.controller.TaskController - Starting application...
+2025-01-29 21:10:48.867 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 21:11:00.576 [main] INFO  org.example.dao.TaskDAO - Task finished with ID: 87aeebdb-ad17-4d88-88dc-997f2fa8eaf1
+2025-01-29 21:11:00.576 [main] INFO  org.example.service.TaskService - Task finished with ID: 87aeebdb-ad17-4d88-88dc-997f2fa8eaf1
+2025-01-29 21:11:00.577 [main] INFO  org.example.controller.TaskController - Task finished with ID: 87aeebdb-ad17-4d88-88dc-997f2fa8eaf1
+2025-01-29 21:11:03.944 [main] INFO  org.example.controller.TaskController - Displayed all tasks
+2025-01-29 21:11:24.287 [main] WARN  org.example.controller.TaskController - Invalid UUID format: 1
+2025-01-29 21:11:38.763 [main] INFO  org.example.controller.TaskController - Exiting application...
+2025-01-29 21:33:24.335 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-29 21:33:24.576 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-29 21:35:25.701 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-29 21:35:25.942 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
