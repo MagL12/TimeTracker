@@ -11,7 +11,7 @@ public class TaskNotFoundException extends RuntimeException {
      *
      * @param taskId ID задачи, которая не была найдена.
      */
-    public TaskNotFoundException(UUID taskId) {
+    public TaskNotFoundException(long taskId) {
         super(String.format("Нет задачи с таким ID - %s", taskId));
     }
 }

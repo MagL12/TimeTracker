@@ -1,7 +1,13 @@
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE SEQUENCE task_sequence
+    AS BIGINT
+    INCREMENT BY 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    START WITH 1
+    NO CYCLE;
 
 CREATE TABLE IF NOT EXISTS tasks (
-                                     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    id BIGINT PRIMARY KEY DEFAULT nextval('task_sequence'),
     name VARCHAR(255) UNIQUE NOT NULL,
     start_time TIMESTAMP NOT NULL,
     stop_time TIMESTAMP,

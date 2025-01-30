@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -46,7 +45,7 @@ public class TaskServiceTest {
     void testAddTask() {
         // Подготовка данных
         String taskName = "Test Task";
-        UUID taskId = UUID.randomUUID();
+        long taskId = 1;
         Task task = new Task();
         task.setName(taskName);
         task.setStartTime(LocalDateTime.now());
@@ -56,7 +55,7 @@ public class TaskServiceTest {
         when(taskDAO.addTask(any(Task.class))).thenReturn(Optional.of(taskId));
 
         // Вызов метода
-        Optional<UUID> result = taskService.addTask(taskName);
+        Optional<Long> result = taskService.addTask(taskName);
 
         // Проверки
         assertTrue(result.isPresent());
@@ -95,7 +94,7 @@ public class TaskServiceTest {
     @DisplayName("Тестируем изменение названия существующей задачи")
     void testUpdateTaskName_Success() throws TaskNotFoundException {
         // Подготовка данных
-        UUID taskId = UUID.randomUUID();
+        long taskId = 1;
         String newName = "Updated Task Name";
 
         // Мокируем поведение TaskDAO
@@ -116,7 +115,7 @@ public class TaskServiceTest {
     @DisplayName("Тестируем изменение названия несуществующей задачи")
     void testUpdateTaskName_TaskNotFound() throws TaskNotFoundException {
         // Подготовка данных
-        UUID taskId = UUID.randomUUID();
+        long taskId = 2;
         String newName = "Updated Task Name";
 
         // Мокируем поведение TaskDAO
@@ -134,7 +133,7 @@ public class TaskServiceTest {
     @DisplayName("Тестируем удаление существующей задачи")
     void testDeleteTask_Success() throws TaskNotFoundException {
         // Подготовка данных
-        UUID taskId = UUID.randomUUID();
+        long taskId = 1;
 
         // Мокируем поведение TaskDAO
         when(taskDAO.deleteTask(taskId)).thenReturn(true);
@@ -154,7 +153,7 @@ public class TaskServiceTest {
     @DisplayName("Тестируем удаление несуществующей задачи")
     void testDeleteTask_TaskNotFound() throws TaskNotFoundException {
         // Подготовка данных
-        UUID taskId = UUID.randomUUID();
+        long taskId = 2;
 
         // Мокируем поведение TaskDAO
         when(taskDAO.deleteTask(taskId)).thenThrow(new TaskNotFoundException(taskId));
@@ -171,7 +170,7 @@ public class TaskServiceTest {
     @DisplayName("Тестируем остановку существующей задачи")
     void testStopTask_Success() throws TaskNotFoundException {
         // Подготовка данных
-        UUID taskId = UUID.randomUUID();
+        long taskId = 1;
 
         // Мокируем поведение TaskDAO
         when(taskDAO.stopTask(taskId)).thenReturn(true);
@@ -191,7 +190,7 @@ public class TaskServiceTest {
     @DisplayName("Тестируем остановку несуществующей задачи")
     void testStopTask_TaskNotFound() throws TaskNotFoundException {
         // Подготовка данных
-        UUID taskId = UUID.randomUUID();
+        long taskId = 2;
 
         // Мокируем поведение TaskDAO
         when(taskDAO.stopTask(taskId)).thenThrow(new TaskNotFoundException(taskId));
@@ -208,7 +207,7 @@ public class TaskServiceTest {
     @DisplayName("Тестируем завершение существующей задачи")
     void testFinishTask_Success() throws TaskNotFoundException {
         // Подготовка данных
-        UUID taskId = UUID.randomUUID();
+        long taskId = 1;
 
         // Мокируем поведение TaskDAO
         when(taskDAO.finishTask(taskId)).thenReturn(true);
@@ -228,7 +227,7 @@ public class TaskServiceTest {
     @DisplayName("Тестируем завершение несуществующей задачи")
     void testFinishTask_TaskNotFound() throws TaskNotFoundException {
         // Подготовка данных
-        UUID taskId = UUID.randomUUID();
+        long taskId = 2;
 
         // Мокируем поведение TaskDAO
         when(taskDAO.finishTask(taskId)).thenThrow(new TaskNotFoundException(taskId));

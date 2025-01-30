@@ -6,6 +6,7 @@ import org.example.entity.Task;
 import org.example.service.TaskService;
 
 import java.time.Duration;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 /**
@@ -44,6 +45,7 @@ public class TaskController {
             System.out.println("5. Остановить задачу");
             System.out.println("6. Завершить задачу");
             System.out.println("7. Выход");
+            System.out.println("8. Справка");
 
             try {
                 if (scanner.hasNextInt()) {
@@ -72,6 +74,9 @@ public class TaskController {
                         case 7:
                             logger.info("Exiting application...");
                             return;
+                        case 8:
+                            printHelp();
+                            break;
                         default:
                             System.out.println("Неверный выбор.");
                     }
@@ -84,6 +89,7 @@ public class TaskController {
                 scanner.nextLine(); // clear the invalid input
             } catch (Exception e) {
                 logger.error("Unexpected error", e);
+                e.printStackTrace();
                 System.out.println("Произошла непредвиденная ошибка. Пожалуйста, повторите ввод.");
                 scanner.nextLine(); // clear the invalid input
             }
@@ -101,7 +107,7 @@ public class TaskController {
             logger.error("Error adding task: name is empty");
             return;
         }
-        Optional<UUID> taskId = taskService.addTask(name);
+        Optional<Long> taskId = taskService.addTask(name);
         if (taskId.isPresent()) {
             System.out.println("Задача добавлена. ID задачи: " + taskId.get());
             logger.info("Task added with ID: {}", taskId.get());
@@ -120,14 +126,23 @@ public class TaskController {
             System.out.println("Нет активных задач.");
             logger.info("No active tasks found");
         } else {
+            // Форматирование времени (без секунд)
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+
+            System.out.println("+----+-----------------------------+----------------------+---------------------+-------------------------+");
+            System.out.println("| ID | Название                    | Начало              | Статус              | Время выполнения         |");
+            System.out.println("+----+-----------------------------+----------------------+---------------------+-------------------------+");
             for (Task task : tasks) {
-                System.out.println("ID: " + task.getId());
-                System.out.println("Название: " + task.getName());
-                System.out.println("Начало: " + task.getStartTime());
-                System.out.println("Статус: " + task.getStatus());
-                System.out.println("Время выполнения: " + getDurationString(task));
-                System.out.println("-----------------------------");
+                System.out.printf(
+                        "| %-2d | %-27s | %-19s | %-19s | %-24s |\n",
+                        task.getId(),
+                        task.getName(),
+                        task.getStartTime().format(formatter), // Форматируем время
+                        task.getStatus(),
+                        getDurationString(task)
+                );
             }
+            System.out.println("+----+-----------------------------+---------------------+---------------------+--------------------------+");
             logger.info("Displayed all tasks");
         }
     }
@@ -137,29 +152,29 @@ public class TaskController {
      */
     private void updateTaskName() {
         System.out.print("Введите ID задачи: ");
-        String idInput = scanner.nextLine();
-        UUID taskId;
+        long idInput;
         try {
-            taskId = UUID.fromString(idInput);
-        } catch (IllegalArgumentException e) {
+            idInput = scanner.nextLong();
+            scanner.nextLine(); // Очистка буфера после nextLong()
+        } catch (InputMismatchException e) {
             System.out.println("Неверный формат ID.");
-            logger.warn("Invalid UUID format: {}", idInput);
+            scanner.nextLine(); // Очистка буфера в случае ошибки
             return;
         }
+
+        long taskId = idInput;
 
         System.out.print("Введите новое название задачи: ");
         String newName = scanner.nextLine();
         if (newName == null || newName.trim().isEmpty()) {
             System.out.println("Название задачи не может быть пустым");
-            logger.warn("Failed to update task name for ID: {}", taskId);
             return;
         }
+
         if (taskService.updateTaskName(taskId, newName)) {
             System.out.println("Название задачи успешно изменено.");
-            logger.info("Task name updated for ID: {}", taskId);
         } else {
             System.out.println("Не удалось изменить название задачи.");
-            logger.warn("Failed to update task name for ID: {}", taskId);
         }
     }
 
@@ -168,22 +183,20 @@ public class TaskController {
      */
     private void deleteTask() {
         System.out.print("Введите ID задачи: ");
-        String idInput = scanner.nextLine();
-        UUID taskId;
+        long idInput = scanner.nextLong();
+        scanner.nextLine();
+        long taskId;
         try {
-            taskId = UUID.fromString(idInput);
+            taskId = idInput;
         } catch (IllegalArgumentException e) {
             System.out.println("Неверный формат ID.");
-            logger.warn("Invalid UUID format: {}", idInput);
             return;
         }
 
         if (taskService.deleteTask(taskId)) {
             System.out.println("Задача успешно удалена.");
-            logger.info("Task deleted with ID: {}", taskId);
         } else {
             System.out.println("Не удалось удалить задачу.");
-            logger.warn("Failed to delete task with ID: {}", taskId);
         }
     }
 
@@ -192,22 +205,20 @@ public class TaskController {
      */
     private void stopTask() {
         System.out.print("Введите ID задачи: ");
-        String idInput = scanner.nextLine();
-        UUID taskId;
+        long idInput = scanner.nextLong();
+        scanner.nextLine();
+        long taskId;
         try {
-            taskId = UUID.fromString(idInput);
+            taskId = idInput;
         } catch (IllegalArgumentException e) {
             System.out.println("Неверный формат ID.");
-            logger.warn("Invalid UUID format: {}", idInput);
             return;
         }
 
         if (taskService.stopTask(taskId)) {
             System.out.println("Задача успешно остановлена.");
-            logger.info("Task stopped with ID: {}", taskId);
         } else {
             System.out.println("Не удалось остановить задачу.");
-            logger.warn("Failed to stop task with ID: {}", taskId);
         }
     }
 
@@ -216,22 +227,20 @@ public class TaskController {
      */
     private void finishTask() {
         System.out.print("Введите ID задачи: ");
-        String idInput = scanner.nextLine();
-        UUID taskId;
+        long idInput = scanner.nextLong();
+        scanner.nextLine();
+        long taskId;
         try {
-            taskId = UUID.fromString(idInput);
+            taskId = idInput;
         } catch (IllegalArgumentException e) {
             System.out.println("Неверный формат ID.");
-            logger.warn("Invalid UUID format: {}", idInput);
             return;
         }
 
         if (taskService.finishTask(taskId)) {
             System.out.println("Задача успешно завершена.");
-            logger.info("Task finished with ID: {}", taskId);
         } else {
             System.out.println("Не удалось завершить задачу.");
-            logger.warn("Failed to finish task with ID: {}", taskId);
         }
     }
 
@@ -242,10 +251,26 @@ public class TaskController {
      * @return строка в формате "X час(ов) Y минут(ы)"
      */
     private String getDurationString(Task task) {
-        Duration duration = task.getDuration();
-        long totalMinutes = duration.toMinutes();
+        long totalMinutes = taskService.getDuration(task).toMinutes();
         long hours = totalMinutes / 60;
         long minutes = totalMinutes % 60;
         return String.format("%d час(ов) %d минут(ы)", hours, minutes);
+    }
+
+    /**
+     * Выводит справку по доступным командам.
+     */
+    private void printHelp() {
+        System.out.println("-----------------------------------------------------------------------.");
+        System.out.println("Доступные команды:                                                     |");
+        System.out.println("1. Добавить задачу - Создает новую задачу.                             |");
+        System.out.println("2. Показать все задачи - Отображает список всех задач.                 |");
+        System.out.println("3. Изменить название задачи - Обновляет название задачи по её ID.      |");
+        System.out.println("4. Удалить задачу - Удаляет задачу по её ID.                           |");
+        System.out.println("5. Остановить задачу - Останавливает выполнение задачи по её ID.       |");
+        System.out.println("6. Завершить задачу - Завершает задачу по её ID.                       |");
+        System.out.println("7. Выход - Завершает работу приложения.                                |");
+        System.out.println("8. Справка - Выводит список доступных команд.                          |");
+        System.out.println("------------------------------------------------------------------------");
     }
 }

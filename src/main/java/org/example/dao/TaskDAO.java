@@ -1,7 +1,5 @@
 package org.example.dao;
 
-import com.zaxxer.hikari.HikariConfig;
-import com.zaxxer.hikari.HikariDataSource;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.example.config.DatabaseConnection;
@@ -13,7 +11,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 /**
  * Класс TaskDAO отвечает за взаимодействие с базой данных для выполнения операций с задачами.
@@ -35,7 +32,7 @@ public class TaskDAO {
      * @param taskId Идентификатор задачи.
      * @return true, если задача существует, иначе false.
      */
-    private boolean checkTaskExists(UUID taskId) {
+    private boolean checkTaskExists(long taskId) {
         String sqlSelect = "SELECT * FROM tasks WHERE id = ?";
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sqlSelect)) {
@@ -54,7 +51,7 @@ public class TaskDAO {
      * @param task Задача, которую нужно добавить.
      * @return Optional, содержащий UUID добавленной задачи, если операция прошла успешно, иначе пустой Optional.
      */
-    public Optional<UUID> addTask(Task task) {
+    public Optional<Long> addTask(Task task) {
         String sql = "INSERT INTO tasks (name, start_time, stop_time, status) VALUES (?, ?, ?, ?) RETURNING id";
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -66,7 +63,7 @@ public class TaskDAO {
 
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
-                    UUID taskId = rs.getObject("id", UUID.class);
+                    long taskId = rs.getLong("id");
                     logger.info("Task added with ID: {}", taskId);
                     return Optional.ofNullable(taskId);
                 }
@@ -90,7 +87,7 @@ public class TaskDAO {
              ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
-                UUID id = rs.getObject("id", UUID.class);
+                long id = rs.getLong("id");
                 String name = rs.getString("name");
                 LocalDateTime startTime = rs.getTimestamp("start_time").toLocalDateTime();
                 LocalDateTime stopTime = rs.getTimestamp("stop_time") != null ? rs.getTimestamp("stop_time").toLocalDateTime() : null;
@@ -119,7 +116,7 @@ public class TaskDAO {
      * @return true, если обновление прошло успешно, иначе false.
      * @throws TaskNotFoundException Если задача с указанным идентификатором не найдена.
      */
-    public boolean updateTaskName(UUID taskId, String newName) {
+    public boolean updateTaskName(long taskId, String newName) {
         if (!checkTaskExists(taskId)) {
             throw new TaskNotFoundException(taskId);
         }
@@ -129,7 +126,7 @@ public class TaskDAO {
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, newName);
-            pstmt.setObject(2, taskId);
+            pstmt.setLong(2, taskId);
 
             int rowsAffected = pstmt.executeUpdate();
             if (rowsAffected > 0) {
@@ -149,7 +146,7 @@ public class TaskDAO {
      * @return true, если удаление прошло успешно, иначе false.
      * @throws TaskNotFoundException Если задача с указанным идентификатором не найдена.
      */
-    public boolean deleteTask(UUID taskId) {
+    public boolean deleteTask(long taskId) {
         if (!checkTaskExists(taskId)) {
             throw new TaskNotFoundException(taskId);
         }
@@ -158,7 +155,7 @@ public class TaskDAO {
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-            pstmt.setObject(1, taskId);
+            pstmt.setLong(1, taskId);
 
             int rowsAffected = pstmt.executeUpdate();
             if (rowsAffected > 0) {
@@ -178,7 +175,7 @@ public class TaskDAO {
      * @return true, если операция прошла успешно, иначе false.
      * @throws TaskNotFoundException Если задача с указанным идентификатором не найдена.
      */
-    public boolean stopTask(UUID taskId) {
+    public boolean stopTask(long taskId) {
         if (!checkTaskExists(taskId)) {
             throw new TaskNotFoundException(taskId);
         }
@@ -188,7 +185,7 @@ public class TaskDAO {
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setTimestamp(1, Timestamp.valueOf(LocalDateTime.now()));
-            pstmt.setObject(2, taskId);
+            pstmt.setLong(2, taskId);
 
             int rowsAffected = pstmt.executeUpdate();
             if (rowsAffected > 0) {
@@ -208,7 +205,7 @@ public class TaskDAO {
      * @return true, если операция прошла успешно, иначе false.
      * @throws TaskNotFoundException Если задача с указанным идентификатором не найдена.
      */
-    public boolean finishTask(UUID taskId) {
+    public boolean finishTask(long taskId) {
         if (!checkTaskExists(taskId)) {
             throw new TaskNotFoundException(taskId);
         }
@@ -217,7 +214,7 @@ public class TaskDAO {
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-            pstmt.setObject(1, taskId);
+            pstmt.setLong(1, taskId);
 
             int rowsAffected = pstmt.executeUpdate();
             if (rowsAffected > 0) {

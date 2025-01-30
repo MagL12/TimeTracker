@@ -6,10 +6,10 @@ import org.example.dao.TaskDAO;
 import org.example.entity.Task;
 import org.example.exception.TaskNotFoundException;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -37,7 +37,7 @@ public class TaskService {
      * @param taskId UUID задачи
      * @return блокировка, связанная с задачей
      */
-    private Lock getLock(UUID taskId) {
+    private Lock getLock(Long taskId) {
         int index = Math.abs(taskId.hashCode()) % lockPool.length;
         return lockPool[index];
     }
@@ -58,7 +58,7 @@ public class TaskService {
      * @param name имя задачи
      * @return Optional с UUID добавленной задачи, если операция успешна, иначе пустой Optional
      */
-    public Optional<UUID> addTask(String name) {
+    public Optional<Long> addTask(String name) {
         Task task = new Task();
         task.setName(name);
         task.setStartTime(LocalDateTime.now());
@@ -83,7 +83,7 @@ public class TaskService {
      * @param newName новое имя задачи
      * @return true, если операция успешна, иначе false
      */
-    public boolean updateTaskName(UUID taskId, String newName) {
+    public boolean updateTaskName(long taskId, String newName) {
         Lock lock = getLock(taskId);
         lock.lock();
         try {
@@ -108,7 +108,7 @@ public class TaskService {
      * @param taskId UUID задачи
      * @return true, если операция успешна, иначе false
      */
-    public boolean deleteTask(UUID taskId) {
+    public boolean deleteTask(long taskId) {
         Lock lock = getLock(taskId);
         lock.lock();
         try {
@@ -133,7 +133,7 @@ public class TaskService {
      * @param taskId UUID задачи
      * @return true, если операция успешна, иначе false
      */
-    public boolean stopTask(UUID taskId) {
+    public boolean stopTask(long taskId) {
         Lock lock = getLock(taskId);
         lock.lock();
         try {
@@ -158,7 +158,7 @@ public class TaskService {
      * @param taskId UUID задачи
      * @return true, если операция успешна, иначе false
      */
-    public boolean finishTask(UUID taskId) {
+    public boolean finishTask(long taskId) {
         Lock lock = getLock(taskId);
         lock.lock();
         try {
@@ -175,5 +175,32 @@ public class TaskService {
         } finally {
             lock.unlock();
         }
+    }
+
+    /**
+     * Вычисляет продолжительность выполнения задачи.
+     * Если задача активна, возвращает продолжительность с момента начала до текущего времени.
+     * Если задача остановлена или завершена, возвращает продолжительность между временем начала и временем остановки.
+     *
+     * @return Продолжительность выполнения задачи.
+     */
+    public Duration getDuration(Task task) {
+        if ("Активна".equals(task.getStatus())) {
+            // Если задача активна, вычисляем продолжительность с момента начала до текущего времени
+            Duration totalDuration = Duration.between(task.getStartTime(), LocalDateTime.now());
+            if (task.getStopTime() != null) {
+                // Если задача была остановлена, вычитаем время простоя
+                totalDuration = totalDuration.minus(Duration.between(task.getStopTime(), LocalDateTime.now()));
+            }
+            return totalDuration;
+        }
+
+        // Если задача не активна, вычисляем продолжительность между временем начала и временем остановки
+        Duration totalDuration = Duration.between(task.getStartTime(), task.getStopTime());
+        if (task.getStopTime() != null) {
+            // Корректируем продолжительность, если задача была остановлена
+            totalDuration = totalDuration.minus(Duration.between(task.getStartTime(), task.getStartTime()));
+        }
+        return totalDuration;
     }
 }
